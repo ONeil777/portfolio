@@ -119,6 +119,25 @@ body {
   .navbar .btn-request {
     margin-top: 20px;
   }
+  .navbar .nav-link {
+    color: #9698a6;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .navbar .nav-link:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 3px;
+    left: 0;
+    top: 45px;
+    background: linear-gradient(45deg, #31d35c, #2bb7da);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
 }
 
 #home {
@@ -170,22 +189,38 @@ body {
 
 #home img {
   max-width: 467px;
+  width: 100%;
+}
+
+@media (max-width: 1440px) {
+  #home .container-fluid {
+    padding: 0 50px;
+  }
 }
 
 @media (max-width: 991px) {
   #home .container-fluid {
-    padding: 0 50px;
+    padding: 0 20px;
   }
-  #home .col-lg-6:first-child {
-    margin-bottom: 50px;
+  #home .container-fluid .col-lg-6:first-child {
+    margin-bottom: 20px;
   }
-  #home .col-lg-6:first-child h1 {
+  #home .container-fluid .col-lg-6:first-child h1 {
     font-size: 3rem;
+  }
+  #home .col-lg-6:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 414px) {
+  #home img {
+    max-width: 300px;
+    width: 100%;
   }
 }
 
 #about {
-  padding: 100px 0;
   background: #f3f4f6;
 }
 
@@ -195,6 +230,16 @@ body {
 
 #about .row:first-child {
   margin-bottom: 150px;
+}
+
+#about h2:after {
+  content: '';
+  display: block;
+  width: 200px;
+  background: #2bb7da;
+  height: 3px;
+  border-radius: 20px;
+  margin: 15px 0;
 }
 
 #about .card {
@@ -207,9 +252,23 @@ body {
   border-radius: 100%;
 }
 
-@media (max-width: 991px) {
+#about .card .card-title {
+  color: #31d35c;
+}
+
+#about .card .card-text {
+  color: #9698a6;
+}
+
+@media (max-width: 1440px) {
   #about .container-fluid {
     padding: 0 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  #about .container-fluid {
+    padding: 0 20px;
   }
   #about .card {
     margin-bottom: 60px;
@@ -223,13 +282,37 @@ body {
   background: #fafafa;
 }
 
+#blog h2:after {
+  content: '';
+  display: block;
+  width: 200px;
+  background: #2bb7da;
+  height: 3px;
+  border-radius: 20px;
+  margin: 15px 0;
+}
+
+#blog .card .card-title {
+  color: #31d35c;
+}
+
+#blog .card .card-text {
+  color: #9698a6;
+}
+
 #blog .container-fluid {
   padding: 0 200px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   #blog .container-fluid {
     padding: 0 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  #blog .container-fluid {
+    padding: 0 20px;
   }
   #blog .card {
     margin-bottom: 60px;
@@ -247,7 +330,11 @@ body {
   padding: 0 200px;
 }
 
-#contact .col-lg-4 {
+#contact .col-lg-3:nth-child(2),
+#contact .col-lg-3:nth-child(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -256,27 +343,58 @@ body {
           justify-content: center;
 }
 
-#contact .col-lg-4 ul {
-  list-style-type: none;
+#contact .col-lg-3:nth-child(2) ul,
+#contact .col-lg-3:nth-child(3) ul {
+  list-style: none;
 }
 
-#contact .col-lg-4 ul a {
+#contact .col-lg-3:nth-child(2) ul a,
+#contact .col-lg-3:nth-child(3) ul a {
   color: white;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+#contact .col-lg-3:nth-child(2) ul a:hover,
+#contact .col-lg-3:nth-child(3) ul a:hover {
+  color: #2bb7da;
 }
 
 #contact .btn {
-  background: linear-gradient(-45deg, #31d35c, #2bb7da);
+  border: 3px solid #31d35c;
   border-radius: 20px;
-  color: white;
+  color: #31d35c;
   width: 170px;
+}
+
+#contact .btn:hover {
+  background: #31d35c;
+  color: white;
+}
+
+@media (max-width: 1440px) {
+  #contact .container-fluid {
+    padding: 0 50px;
+  }
 }
 
 @media (max-width: 991px) {
   #contact .container-fluid {
-    padding: 0 50px;
+    padding: 0 20px;
   }
-  #contact .container-fluid .col-lg-4 {
-    margin: 40px 0;
+  #contact .container-fluid .col-lg-3:first-child,
+  #contact .container-fluid .col-lg-3:last-child {
+    margin: 20px 0;
   }
+  #contact .container-fluid .col-lg-3:nth-child(2) ul,
+  #contact .container-fluid .col-lg-3:nth-child(3) ul {
+    padding-right: 45px;
+    text-align: center;
+  }
+}
+
+#attr {
+  background: #f3f4f6;
 }
 /*# sourceMappingURL=main.css.map */
