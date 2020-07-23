@@ -415,6 +415,10 @@ body {
 			}
 		}
 
+		br {
+			display: none;
+		}
+
 		#slider {
 			img {
 				margin-bottom: 150px;
@@ -466,6 +470,10 @@ body {
 					width: 180px;
 					margin: 15px auto 0;
 				}
+			}
+
+			br {
+				display: block;
 			}
 
 			#slider {

@@ -372,6 +372,10 @@ body {
   margin: 15px auto 0;
 }
 
+#community .container-fluid br {
+  display: none;
+}
+
 #community .container-fluid #slider img {
   margin-bottom: 150px;
 }
@@ -412,6 +416,9 @@ body {
     border-radius: 7px;
     width: 180px;
     margin: 15px auto 0;
+  }
+  #community .container-fluid br {
+    display: block;
   }
   #community .container-fluid #slider img {
     margin-bottom: 240px;
